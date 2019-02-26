@@ -133,9 +133,9 @@ print('Training job current status: {}'.format(status))
 
 try:
     # wait for the job to finish and report the ending status
-    sagemaker.get_waiter('training_job_completed_or_stopped').wait(TrainingJobName=job_name)
-    training_info = sagemaker.describe_training_job(TrainingJobName=job_name)
-    status = training_info['TrainingJobStatus']
+    #sagemaker.get_waiter('training_job_completed_or_stopped').wait(TrainingJobName=job_name)
+    #training_info = sagemaker.describe_training_job(TrainingJobName=job_name)
+    #status = training_info['TrainingJobStatus']
     print("Training job ended with status: " + status)
 except:
     print('Training failed to start')
