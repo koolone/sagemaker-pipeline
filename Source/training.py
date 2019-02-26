@@ -124,19 +124,20 @@ print('Training job name: {}'.format(job_name))
 print('\nInput Data Location: {}'.format(training_params['InputDataConfig'][0]['DataSource']['S3DataSource']))
 
 # create the Amazon SageMaker training job
-sagemaker = boto3.client(service_name='sagemaker')
-sagemaker.create_training_job(**training_params)
+#sagemaker = boto3.client(service_name='sagemaker')
+#sagemaker.create_training_job(**training_params)
 
 # confirm that the training job has started
-status = sagemaker.describe_training_job(TrainingJobName=job_name)['TrainingJobStatus']
-print('Training job current status: {}'.format(status))
+#status = sagemaker.describe_training_job(TrainingJobName=job_name)['TrainingJobStatus']
+#print('Training job current status: {}'.format(status))
 
 try:
     # wait for the job to finish and report the ending status
     #sagemaker.get_waiter('training_job_completed_or_stopped').wait(TrainingJobName=job_name)
     #training_info = sagemaker.describe_training_job(TrainingJobName=job_name)
     #status = training_info['TrainingJobStatus']
-    print("Training job ended with status: " + status)
+    #print("Training job ended with status: " + status)
+    print("Bypassed Training job ")
 except:
     print('Training failed to start')
      # if exception is raised, that means it has failed
